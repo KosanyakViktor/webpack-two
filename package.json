@@ -1,0 +1,16 @@
+{
+  "name": "systemtwo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build:scripts": "webpack -p",
+    "watch:scripts": "webpack --development eval-source-maps -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  }
+}
