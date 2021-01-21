@@ -1,13 +1,38 @@
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
-    entry: {
-        profile:'./src/profile/index.js',
-        dashboard: './src/dashboard/index.js'
-    },
+    entry: './src/index.js',
     output: {
-        filename: '[name].js',
-        path: path.join(__dirname,'build')
+        filename: 'bundle.js',
     },
-    watch: true
+    module: {
+        rules: [
+            {
+                test: /\.s?css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader:'url-loader',
+                        options: {
+                            outputPath: 'images',
+                            limit: 8192,
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+        })
+    ]
 };

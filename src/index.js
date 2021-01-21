@@ -2,6 +2,7 @@
 
 import fetchUser from './profile/gateway.js';
 import { printProfile } from './profile/index.js';
+import './index.css'
 
 fetchUser('github')
     .then(userData => printProfile({
