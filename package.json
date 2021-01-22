@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -p",
-    "watch": "webpack --development eval-source-maps -w"
+    "start": "webpack-dev-server --watch -d --development eval-source-maps --open"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^4.41.3",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.2"
   }
 }
